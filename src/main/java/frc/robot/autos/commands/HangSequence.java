@@ -5,7 +5,8 @@
 // license that can be found in the LICENSE file at
 // the root directory of this project.
 
-package frc.robot.autos.commands;
+package frc.robot.autos.commands; 
+// .commands comes from the file that it is in. the rest of it comes automatically when you create a java file.
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -16,12 +17,17 @@ import frc.robot.Constants;
 import frc.robot.helpers.DebugCommandBase;
 import frc.robot.subsystems.climb.Climb;
 import java.util.LinkedList;
+//do not have to directly import when importing from two documents in same file?
 
 public class HangSequence extends DebugCommandBase {
+  // extends - inherits from another class; DebugCommandBase is imported as you can see above in the import statements
   private CommandXboxController operatorController;
+  // CommandXboxController is already included in a library -- check import statements
   private final int translationAxis = XboxController.Axis.kLeftY.value;
   private final int secondaryAxis = XboxController.Axis.kRightY.value;
+  //kRightY and kLeftY are constants indicated by the k
   Climb climbSubsystem;
+  // Climb is imported 
 
   public HangSequence(Climb climb, CommandXboxController operator) {
     climbSubsystem = climb;
